@@ -1,0 +1,21 @@
+
+import React from 'react'
+import TodoHeader from './TodoHeader';
+import TodoMain from './TodoMain';
+import TodoImput from './TodoImput';
+
+import './scss/TodoTemplate.scss';
+
+const TodoTemplate = () => {
+  return (
+    <div className='TodoTemplate'>
+        <TodoHeader />
+        <TodoMain />
+        <TodoImput />
+
+    </div>
+
+  );
+}
+
+export default TodoTemplate

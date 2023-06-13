@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+## 1. Node.js 설치
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ 
 
-## Available Scripts
+React.js 프로젝트를 개발하기 위해서는 Node.js가 필요합니다. 
 
-In the project directory, you can run:
+Node.js는 JavaScript 런타임 환경으로, npm(Node Package Manager)을 포함하고 있어 
 
-### `npm start`
+React.js 프로젝트의 종속성을 관리할 수 있습니다. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Node.js를 설치하기 위해 공식 웹사이트(**[https://nodejs.org)에서](https://nodejs.xn--org%29-105zg9y/)** 다운로드하여 설치해주세요. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+(LTS 버전을 받아 주세요.)
 
-### `npm test`
+설치가 완료되면 터미널 또는 명령 프롬프트에서 **`node -v`** 명령을 실행하여 버전을 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+확인할 수 있습니다.
 
-### `npm run build`
+## 2. Create React App 설치
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Create React App은 React.js 프로젝트를 손쉽게 생성하고 구성할 수 있는 도구입니다. 터미널 또는 명령 프롬프트를 열고 다음 명령을 실행하여 Create React App을 글로벌로 설치해주세요:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 3. 새로운 React.js 프로젝트 생성
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+터미널 또는 명령 프롬프트에서 React.js 프로젝트를 생성할 디렉토리로 이동한 후, 다음 명령을 실행하여 새로운 React.js 프로젝트를 생성해주세요
 
-### `npm run eject`
+```powershell
+npx create-react-app my-app
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+위 명령에서 "my-app"은 프로젝트의 이름으로 원하는 이름으로 변경할 수 있습니다. 프로젝트 생성이 완료되면 해당 디렉토리로 이동하여 개발을 진행할 수 있습니다.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 이제 React.js 개발을 위한 설정이 완료되었습니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+이제 Visual Studio Code에서 프로젝트를 열고 **`src`** 폴더 내의 파일들을 수정하여 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+React 컴포넌트를 작성하고 개발을 시작할 수 있습니다. 
 
-## Learn More
+예를 들어, **`src/App.js`** 파일을 열어 기본적인 React 컴포넌트를 작성하고,
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ **`src/index.js`** 파일에서 해당 컴포넌트를 렌더링하는 코드를 작성할 수 있습니다.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+프로젝트 개발을 시작하기 전에 **`npm start`** 명령을 실행하여 개발 서버를 시작해주세요. 
 
-### Code Splitting
+이렇게 하면 변경 사항이 저장될 때마다 프로젝트가 자동으로 다시 로드됩니다. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+개발 서버는 기본적으로 **`http://localhost:3000`**에서 실행됩니다.
 
-### Analyzing the Bundle Size
+--------------------------------------------------------------------------------------------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+react 깃허브 clone 시 주의사항
 
-### Making a Progressive Web App
+$npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---------------------------------------------------------------------------------------------
 
-### Advanced Configuration
+vscode 확장 추천
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Korean Language Pack for Visual Studio Code,
+Auto Close Tag,
+Beautify,
+ES7+ React/Redux/React-Native snippets,
+Live Server,
+Power Mode <---개인 취향 ,
+vscode-styled-components, 
+Material Icon Theme,
+Auto Rename Tag,
 
-### Deployment
+F1키를 누르고 setting.json 입력후
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
 
-### `npm run build` fails to minify
+"emmet.syntaxProfiles": {
+     "javascript": "jsx" 
+ },
+ "emmet.includeLanguages": {
+    "javascript": "html"
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+
+추가
+
+---------------------------------------------------------------------------------------------
+
+추가 라이브러리
+
+```
+
+$ npm install react-icons  // 아이콘
+$ npm install classnames   // 클래스 add/remove 편리한거
+$ npm install sass // scss 문법 사용
+$ npm install reactstrap bootstrap
+$ npm install @mui/material @emotion/react @emotion/styled
+$ npm install @mui/icons-material
+$ npm install react-router-dom
+
+```

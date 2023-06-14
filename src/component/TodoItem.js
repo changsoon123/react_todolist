@@ -23,6 +23,7 @@ const TodoItem = ({ item, remove, check }) => {
              onClick={() => check(id)}>
             {done && <MdDone />}
         </div>
+          
         <span className={cn('text', {finish: done})}>{title}</span>
         <div className='remove' onClick={() => remove(id)}>
             <MdDelete />

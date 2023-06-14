@@ -20,6 +20,11 @@ Node.js를 설치하기 위해 공식 웹사이트(**[https://nodejs.org)에서]
 
 Create React App은 React.js 프로젝트를 손쉽게 생성하고 구성할 수 있는 도구입니다. 터미널 또는 명령 프롬프트를 열고 다음 명령을 실행하여 Create React App을 글로벌로 설치해주세요:
 
+```
+npm install -g create-react-app
+```
+
+
 ## 3. 새로운 React.js 프로젝트 생성
 
 터미널 또는 명령 프롬프트에서 React.js 프로젝트를 생성할 디렉토리로 이동한 후, 다음 명령을 실행하여 새로운 React.js 프로젝트를 생성해주세요

@@ -52,7 +52,11 @@ React 컴포넌트를 작성하고 개발을 시작할 수 있습니다.
 
 react 깃허브 clone 시 주의사항
 
+```
+
 $npm install
+
+```
 
 ---
 
@@ -80,12 +84,9 @@ F1키를 누르고 setting.json 입력후
 }
 
 ```
-
-추가
-
----
-
+---------------------
 추가 라이브러리
+---------------------
 
 ```
 
@@ -96,5 +97,19 @@ $ npm install reactstrap bootstrap
 $ npm install @mui/material @emotion/react @emotion/styled
 $ npm install @mui/icons-material
 $ npm install react-router-dom
+
+```
+
+## 리액트 라우터 설정
+    -index.js에 BrowserRouter 컴포넌트로 App 감싸기.
+
+```javascript
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <BrowserRouter>
+    <App />
+    </BrowserRouter>
+);
 
 ```

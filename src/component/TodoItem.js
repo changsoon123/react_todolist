@@ -1,35 +1,27 @@
+import { MdDone } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
+import cn from "classnames";
 
-
-import { MdDone } from 'react-icons/md';
-import { MdDelete } from 'react-icons/md';
-import cn from 'classnames';
-
-import './scss/TodoItem.scss';
-
-
-
+import "./scss/TodoItem.scss";
 
 const TodoItem = ({ item, remove, check }) => {
-
-  const {id, title, done} = item;
-
-  
-
-
+  const { id, title, done } = item;
 
   return (
-    <li className='todo-list-item'>
-        <div className={cn('check-circle', {active: done})}
-             onClick={() => check(id)}>
-            {done && <MdDone />}
-        </div>
-          
-        <span className={cn('text', {finish: done})}>{title}</span>
-        <div className='remove' onClick={() => remove(id)}>
-            <MdDelete />
-        </div>
-    </li>
-  )
-}
+    <li className="todo-list-item">
+      <div
+        className={cn("check-circle", { active: done })}
+        onClick={() => check(id, done)}
+      >
+        {done && <MdDone />}
+      </div>
 
-export default TodoItem
+      <span className={cn("text", { finish: done })}>{title}</span>
+      <div className="remove" onClick={() => remove(id)}>
+        <MdDelete />
+      </div>
+    </li>
+  );
+};
+
+export default TodoItem;

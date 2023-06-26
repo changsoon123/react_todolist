@@ -1,13 +1,14 @@
 import React from 'react'
 import {Button, Container, Grid,
   TextField, Typography, Link} from "@mui/material";
+import { useNavigate } from 'react-router-dom';  
 
-  import {API_BASE_URL as BASE, USER} from '../../config/host-config'
+import {API_BASE_URL as BASE, USER} from '../../config/host-config'
 
 const Login = () => {
 
   const REQUEST_URL = BASE + USER + '/signin';
-
+  const redirection = useNavigate();
 
   //서버에 비동기 로그인 요청
   //함수 앞에 async를 붙이면 해당 함수는 프로미스 객체를 바로 리턴한다.
@@ -37,10 +38,20 @@ const Login = () => {
           return;
       }
 
-      const json = await res.json();
-      console.log(json);
+      // const json = await res.json();
+      // console.log(json);
 
-
+      const { token, userName, email, role} = await res.json();
+      //json에 담긴 인증정보를 클라이언트에 보관
+      // 1. 로컬 스토리지 - 브라우저가 종료 되어도 보관됨
+      // 2. 세션 스토리지 - 브라우저가 종료되면 사라짐.
+      
+      localStorage.setItem('ACCESS_TOKEN', token);
+      localStorage.setItem('LOGIN_USERNAME', userName);
+      localStorage.setItem('USER_ROLE', role);
+      
+      //홈으로 리다이렉트
+      redirection('/');
 
     // fetch(REQUEST_URL, {
     //   method: 'POST',

@@ -12,7 +12,10 @@ const Login = () => {
   const redirection = useNavigate();
 
   //AuthContext에서 onLogin 함수를 가져온다.
-  const {onLogin} = useContext(AuthContext);
+  const {onLogin, isLoggedIn} = useContext(AuthContext);
+
+  
+
 
   //서버에 비동기 로그인 요청
   //함수 앞에 async를 붙이면 해당 함수는 프로미스 객체를 바로 리턴한다.

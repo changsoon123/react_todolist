@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {Button, Container, Grid,
     TextField, Typography, Link} from "@mui/material";
 
 //리 다이렉트 사용하기
 import { useNavigate } from 'react-router-dom';
 import {API_BASE_URL as BASE, USER} from '../../config/host-config'
+import CustomSnackBar from '../layout/CustomSnackBar';
+import AuthContext from '../../util/AuthContext';
 
 
 const Join = () => { 
@@ -13,6 +15,19 @@ const Join = () => {
     const redirection = useNavigate();
 
     const API_BASE_URL = BASE + USER;
+
+    const {onLogin, isLoggedIn} = useContext(AuthContext);
+
+  const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+      if(isLoggedIn) {
+        setOpen(true);
+        setTimeout(() => {
+          redirection('/');
+        }, 3000);
+      }
+    },[isLoggedIn, redirection]);
 
     //상태변수로 회원가입 입력값 관리
     const[userValue, setUserValue] = useState({
@@ -252,6 +267,8 @@ const Join = () => {
     }
 
     return (
+      <>
+      {!isLoggedIn && 
         <Container component="main" maxWidth="xs" style={{ margin: "200px auto" }}>
             <form noValidate>
                 <Grid container spacing={2}>
@@ -354,6 +371,11 @@ const Join = () => {
                 </Grid>
             </form>
         </Container>
+        }
+        <CustomSnackBar
+          open={open}
+        />
+      </>
       );
 }
 

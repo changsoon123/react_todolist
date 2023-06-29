@@ -317,7 +317,7 @@ const Join = () => {
                               // src={require("../../assets/img/image-add.png")}
                               src={imgFile ? imgFile : require("../../assets/img/image-add.png")}
                               alt="profile"
-                               
+                              
                             />
                         </div>
                         <label className='signup-img-label' htmlFor='profile-img'>프로필 이미지 추가</label>

@@ -16,7 +16,7 @@ const Header = () => {
   //프로필 이미지 url 상태 변수
   const [profileUrl, setProfileUrl] = useState(null);
 
-  const profileRequestURL = `${API_BASE_URL}${USER}/load-profile`;
+  const profileRequestURL = `${API_BASE_URL}${USER}/load-s3`;
 
   // AuthContext에서 로그인 상태와 onLogout 함수를 가져온다.
   const{isLoggedIn,onLogout,userName} = useContext(AuthContext);
@@ -36,11 +36,16 @@ const Header = () => {
       });
       
       if(res.status === 200){
+
+        //서버에서는 이제 s3 url이 응답된다.
+        const imgUrl = await res.text();
+        setProfileUrl(imgUrl);
+
          // 서버에서는 직렬화된 이미지가 응답된다.
-         const profileBlob = await res.blob();
-         // 해당 이미지를 imgUrl로 변경
-         const imgUrl = window.URL.createObjectURL(profileBlob);
-         setProfileUrl(imgUrl);
+        //  const profileBlob = await res.blob();
+        //  // 해당 이미지를 imgUrl로 변경
+        //  const imgUrl = window.URL.createObjectURL(profileBlob);
+        //  setProfileUrl(imgUrl);
       } else {
         const err = await res.text();
         

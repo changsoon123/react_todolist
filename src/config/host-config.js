@@ -6,7 +6,8 @@ const clientHostName = window.location.hostname;
 let backEndHostName; // 백엔드 서버 호스트 이름
 
 if(clientHostName === 'localhost'){ //개발 중
-  backEndHostName = 'http://localhost:8181';
+  // backEndHostName = 'http://localhost:8181';
+  backEndHostName = 'http://13.124.226.120';
 } else if(clientHostName === 'spring.com'){ //배포해서 서비스 중
   backEndHostName = 'https://api.spring.com'
 }
